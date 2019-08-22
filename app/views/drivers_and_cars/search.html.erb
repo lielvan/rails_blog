@@ -1,0 +1,29 @@
+<h1>Search Result</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Created At</th>
+  </tr>
+  <% if @cars %>
+    <h2>All Cars For - <%= @driver.name %></h2>
+    <% @cars.each do |car| %>
+      <tr>
+        <td><%= @driver.id %></td>
+        <td><%= car.title %></td>
+        <td><%= car.created_at %></td>
+      </tr>
+    <% end %>
+  <% end %>
+  <% if @drivers %>
+    <h2>All Drivers For - <%= @car.title %></h2>
+    <% @drivers.each do |driver| %>
+      <tr>
+        <td><%= driver.id %></td>
+        <td><%= driver.name %></td>
+        <td><%= @car.created_at %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

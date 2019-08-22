@@ -1,0 +1,20 @@
+<% if @driver.driver_image.attached? %>
+  <img src="<%= (url_for(@driver.driver_image)) %>">
+<% end %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @driver.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @driver.email %>
+</p>
+
+<p>
+  <strong>Date Of Birth:</strong>
+  <%= @driver.date_of_birth %>
+</p>
+
+<%= link_to 'Back', drivers_path %>

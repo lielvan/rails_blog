@@ -1,0 +1,63 @@
+<h1>Drivers And Cars Page</h1>
+
+<h2>Cars</h2>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Type</th>
+    <th>Color</th>
+    <th>Drivers</th>
+    <th></th>
+  </tr>
+
+  <% @cars.each do |car| %>
+    <tr>
+      <td><%= car.title %></td>
+      <td><%= car.car_type %></td>
+      <td><%= car.color %></td>
+      <td><%= car.drivers.map {|d| d.name}.join(', ') %></td>
+      <td><%= link_to 'Show', car_path(car) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br>
+
+<h2>Drivers</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Date Of Birth</th>
+    <th></th>
+  </tr>
+
+  <% @drivers.each do |driver| %>
+    <tr>
+      <td><%= driver.name %></td>
+      <td><%= driver.email %></td>
+      <td><%= driver.date_of_birth %></td>
+      <td><%= link_to 'Show', driver_path(driver) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<hr>
+
+<%= form_with url: 'driversandcars/search', method: "get", local: true do |form| %>
+  <p>
+    <%= form.label :drivers %><br>
+    <%= form.collection_select :driver_id, Driver.all, :id, :name, :prompt => "Select Driver" %>
+  </p>
+
+  <p>
+    <%= form.label :cars %><br>
+    <%= form.collection_select :car_id, Car.all, :id, :title, :prompt => "Select Car" %>
+  </p>
+
+  <p>
+    <%= form.submit("Search") %>
+  </p>
+<% end %>
