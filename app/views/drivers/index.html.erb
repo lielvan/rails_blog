@@ -1,25 +1,10 @@
-<h1>Listing Drivers</h1>
-
-<%= link_to 'New Driver', new_driver_path %>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Date Of Birth</th>
-    <th></th>
-  </tr>
-
-  <% @drivers.each do |driver| %>
-    <tr>
-      <td><%= driver.name %></td>
-      <td><%= driver.email %></td>
-      <td><%= driver.date_of_birth %></td>
-      <td><%= link_to 'Show', driver_path(driver) %></td>
-    </tr>
-  <% end %>
-</table>
-
-<br>
-
-<%= link_to 'Cars', controller: 'cars' %>
+<div class="row text-center">
+  <div class="col">
+    <h1 class="title">Drivers Table</h1>
+    
+    <%= link_to 'New Driver', new_driver_path, class:"btn btn-primary d-block ml-auto mb-3 listing-new-btn" %>
+    <br>
+    
+    <drivers :drivers="<%= @drivers %>"></drivers>
+  </div>
+</div>

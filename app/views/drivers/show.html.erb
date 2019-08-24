@@ -1,20 +1,24 @@
-<% if @driver.driver_image.attached? %>
-  <img src="<%= (url_for(@driver.driver_image)) %>">
-<% end %>
-
-<p>
-  <strong>Name:</strong>
-  <%= @driver.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @driver.email %>
-</p>
-
-<p>
-  <strong>Date Of Birth:</strong>
-  <%= @driver.date_of_birth %>
-</p>
-
-<%= link_to 'Back', drivers_path %>
+<div class="row text-center">
+  <div class="col">
+    <% if @driver.driver_image.attached? %>
+      <img class="driver-img" src="<%= (url_for(@driver.driver_image)) %>">
+    <% end %>
+    
+    <div class="mt-3">
+      <strong>Name:</strong>
+      <%= @driver.name %>
+    </div>
+    
+    <div class="mt-3">
+      <strong>Email:</strong>
+      <%= @driver.email %>
+    </div>
+    
+    <div class="mt-3 mb-3">
+      <strong>Date Of Birth:</strong>
+      <%= @driver.date_of_birth %>
+    </div>
+    
+    <%= link_to 'Back', drivers_path %>
+  </div>
+</div>
