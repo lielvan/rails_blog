@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+.listing-new-btn {
+  width: 7rem;
+  height: fit-content;
+}
+
+.driver-img, .car-img {
+  height: 200px;
+}
+
+.form-check-label {
+  display: block;
+}

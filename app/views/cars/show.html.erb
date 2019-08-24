@@ -1,20 +1,24 @@
-<% if @car.car_image.attached? %>
-  <img src="<%= (url_for(@car.car_image)) %>">
-<% end %>
-
-<p>
-  <strong>Title:</strong>
-  <%= @car.title %>
-</p>
-
-<p>
-  <strong>Type:</strong>
-  <%= @car.car_type %>
-</p>
-
-<p>
-  <strong>Color:</strong>
-  <%= @car.color %>
-</p>
-
-<%= link_to 'Back', cars_path %>
+<div class="row text-center">
+  <div class="col">
+    <% if @car.car_image.attached? %>
+      <img class="car-img" src="<%= (url_for(@car.car_image)) %>">
+    <% end %>
+    
+    <div class="mt-3">
+      <strong>Title:</strong>
+      <%= @car.title %>
+    </div>
+    
+    <div class="mt-3">
+      <strong>Type:</strong>
+      <%= @car.car_type %>
+    </div>
+    
+    <div class="mt-3 mb-3">
+      <strong>Color:</strong>
+      <%= @car.color %>
+    </div>
+    
+    <%= link_to 'Back', cars_path %>
+  </div>
+</div>
