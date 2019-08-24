@@ -1,29 +1,41 @@
-<h1>Search Result</h1>
+<div class="row text-center">
+  <div class="col">
+    <h1>Search Result</h1>
+    
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Created At</th>
+        </tr>
+      </thead>
 
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Created At</th>
-  </tr>
-  <% if @cars %>
-    <h2>All Cars For - <%= @driver.name %></h2>
-    <% @cars.each do |car| %>
-      <tr>
-        <td><%= @driver.id %></td>
-        <td><%= car.title %></td>
-        <td><%= car.created_at %></td>
-      </tr>
-    <% end %>
-  <% end %>
-  <% if @drivers %>
-    <h2>All Drivers For - <%= @car.title %></h2>
-    <% @drivers.each do |driver| %>
-      <tr>
-        <td><%= driver.id %></td>
-        <td><%= driver.name %></td>
-        <td><%= @car.created_at %></td>
-      </tr>
-    <% end %>
-  <% end %>
-</table>
+      <tbody>
+        <% if !@cars.blank? %>
+          <h2>All Cars For - <%= @driver.name %></h2>
+          <% @cars.each do |car| %>
+            <tr>
+              <td scope="row"><%= @driver.id %></td>
+              <td><%= car.title %></td>
+              <td><%= car.created_at %></td>
+            </tr>
+          <% end %>
+        <% end %>
+        <% if !@drivers.blank? %>
+          <h2>All Drivers For - <%= @car.title %></h2>
+          <% @drivers.each do |driver| %>
+            <tr>
+              <td scope="row"><%= driver.id %></td>
+              <td><%= driver.name %></td>
+              <td><%= @car.created_at %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+    
+    <br>
+    <%= link_to 'Back', driversandcars_path %>
+  </div>
+</div>
