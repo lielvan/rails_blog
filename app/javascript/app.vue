@@ -1,6 +1,7 @@
 <template>
   <div>
     <p>{{ message }}</p>
+    <p>{{ author }}</p>
     <a href="/articles">Blog</a> |
     <a href="/drivers">Drivers</a> |
     <a href="/cars">Cars</a> |
@@ -12,7 +13,8 @@
 export default {
   data() {
     return {
-      message: "Cnvrg.io Rails Assignment"
+      message: "Cnvrg.io Rails Assignment",
+      author: "Liel van der Hoeven"
     }
   }
 }
