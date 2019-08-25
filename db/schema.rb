@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2019_08_22_100151) do
   end
 
   create_table "cars", force: :cascade do |t|
-    t.string "title"
+    t.string "title", null: false
     t.string "car_type"
     t.integer "color"
     t.datetime "created_at", precision: 6, null: false
@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(version: 2019_08_22_100151) do
   end
 
   create_table "drivers", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
+    t.string "name", null: false
+    t.string "email", null: false
     t.date "date_of_birth"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
