@@ -1,22 +1,24 @@
 class CarsController < ApplicationController
   def index
     @cars = Car.all
-    @drivers = Driver.all
   end
 
   def show
     @car = Car.find(params[:id])
-    @drivers = Driver.all
   end
   
   def new
+    @car = Car.new
   end
 
   def create
     @car = Car.new(car_params)
 
-    @car.save
-    redirect_to @car
+    if @car.save
+      redirect_to @car
+    else
+      render 'new'
+    end
   end
 
   private

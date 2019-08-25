@@ -3,6 +3,7 @@
     <h1 class="title">New Driver</h1>
   
     <%= form_with scope: :driver, url: drivers_path, local: true do |form| %>
+      <p v-if="<%= @driver.errors.any? %>" class="text-danger"><%= @driver.errors.full_messages.first if @driver.errors.any? %></p>
       <div class="form-group">
         <%= form.label :name %><br>
         <%= form.text_field :name, class: "form-control", :required => true %>
