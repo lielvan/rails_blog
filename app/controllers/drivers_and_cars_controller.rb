@@ -1,7 +1,7 @@
 class DriversAndCarsController < ApplicationController
   def index
-    @cars_list = Car.all
-    @cars = Car.all.to_json
+    @cars = Car.all
+    @cars_json = @cars.to_json
     @drivers = Driver.all.to_json
   end
 
