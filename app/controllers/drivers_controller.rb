@@ -15,6 +15,11 @@ class DriversController < ApplicationController
     @driver = Driver.new(driver_params)      
     
     if @driver.save
+      ActionCable.server.broadcast 'driver',
+        id: @driver.id,
+        name: @driver.name,
+        email: @driver.email,
+        date_of_birth: @driver.date_of_birth
       redirect_to @driver
     else
       render 'new'

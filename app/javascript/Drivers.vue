@@ -1,6 +1,6 @@
 <template>
   <div>
-    <table class="table">
+    <table class="table" id="drivers">
       <thead class="thead-dark">
         <tr>
           <th scope="col">Name</th>
